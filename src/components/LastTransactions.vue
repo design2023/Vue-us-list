@@ -55,12 +55,6 @@ export default {
         title: "الملف",
         key: "file",
         align: "center",
-      },
-      {
-        title: "تحميل",
-        key: "downloadAction",
-        align: "center",
-        sortable: false
       }
       
     ],
