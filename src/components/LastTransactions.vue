@@ -11,11 +11,7 @@
       item-value="name"
       @update:options="loadItems"
     >
-    <template v-slot:item.downloadAction="{ item }">
-        <a :href="item.file" download class="v-btn v-btn--contained theme--light v-size--default">
-          تحميل
-        </a>
-      </template>
+   
 </v-data-table-server>
   </div>
 </template>
