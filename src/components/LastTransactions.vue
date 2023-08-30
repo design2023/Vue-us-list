@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-data-table-server
+    <v-data-table
       v-model:items-per-page="itemsPerPage"
       :headers="headers"
       :items-length="totalItems"
@@ -11,8 +11,12 @@
       item-value="name"
       @update:options="loadItems"
     >
+    <template v-slot:[`item.actions`]="{ item }"  >
+        <v-btn  color="#115555" style="color: aliceblue;"  :href="item.raw.file" download>Download file</v-btn>
+       
+    </template>
    
-</v-data-table-server>
+</v-data-table>
   </div>
 </template>
 
@@ -51,11 +55,7 @@ export default {
         key: "time",
         align: "center",
       },
-      {
-        title: "الملف",
-        key: "file",
-        align: "center",
-      }
+      { title: 'الإعدادات', key: 'actions', sortable: false , text: 'Actions', value: 'actions' },
       
     ],
     search: "",
@@ -104,6 +104,9 @@ export default {
     },
     getData() {
       console.log("category : ", this.category);
+    },
+    downloadfile (item) {
+    console.log(item.file);
     },
   },
 };

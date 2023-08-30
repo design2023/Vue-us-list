@@ -9,6 +9,7 @@ import router from './router';
 
 const vuetify = createVuetify({
   theme: { defaultTheme: "light" },
+  iconfont: 'mdi',
   components: {
     ...components,
     ...labsComponents,
